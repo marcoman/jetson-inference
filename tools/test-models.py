@@ -159,7 +159,7 @@ def test_images(module, model, images):
     # run command
     cmd = f'{module} --network={model} "{inputs}" "{outputs}"'
     print(cmd)
-    cmd_results = subprocess.run(cmd, shell=True, stdout=None if args.verbose else subprocess.DEVNULL)
+    cmd_results = subprocess.run(cmd, shell=False, stdout=None if args.verbose else subprocess.DEVNULL)
     
     if cmd_results.returncode != 0:
         log(f'[FAIL]   return code {cmd_results.returncode}:  {cmd}')
