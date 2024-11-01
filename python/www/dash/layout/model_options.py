@@ -30,18 +30,20 @@ from dash.exceptions import PreventUpdate
 from server import Server
 
 
-def create_model_dialog(model={}):
+def create_model_dialog(model=None):
     """
     Create the top-level dialog container used for creating/configuring models.
     It's children will be created dynamically in create_model_options() below.
     """
+    model = {} if model is None else model
     return dbc.Modal(create_model_options(model), id='model_options_dialog', is_open=False)
     
     
-def create_model_options(model={}):
+def create_model_options(model=None):
     """
     Create the dialog body used for creating/configuring models.
     """
+    model = {} if model is None else model
     children = [dbc.ModalHeader(dbc.ModalTitle(model.get('name', 'Load Model')))]
  
     tabs = dbc.Tabs([

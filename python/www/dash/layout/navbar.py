@@ -28,10 +28,11 @@ from config import config
 
 #from layout.test_card import create_test_card
 
-def create_navbar(resources={}):
+def create_navbar(resources=None):
     """
     Create a navbar component
     """
+    resources = {} if resources is None else resources
     return dbc.NavbarSimple(
         children=create_navbar_menus(resources),
         brand=config['dash']['title'],
@@ -42,10 +43,11 @@ def create_navbar(resources={}):
     )
         
 
-def create_navbar_menus(resources={}):
+def create_navbar_menus(resources=None):
     """
     Create the menu components of a navbar
     """
+    resources = {} if resources is None else resources
     navbar = []
 
     # streams menu 

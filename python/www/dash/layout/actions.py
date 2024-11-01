@@ -68,10 +68,11 @@ def create_actions_body():
     return children
    
 
-def create_action_settings( expanded_actions=[] ):
+def create_action_settings( expanded_actions=None ):
     """
     Create components for configuring each action
     """
+    expanded_actions = [] if expanded_actions is None else expanded_actions
     actions = Server.request('/actions').json()
     children = []
     

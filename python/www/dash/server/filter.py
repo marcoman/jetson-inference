@@ -26,10 +26,11 @@ class EventFilter:
     Class for filtering events.  Inherit your actions from this class to automatically
     add filtering properties and call `self.filter(event)` in your `on_event()` callback.
     """
-    def __init__(self, labels=[], min_frames=None, min_score=None, **kwargs):
+    def __init__(self, labels=None, min_frames=None, min_score=None, **kwargs):
         """
         Initialize a new filter.
         """
+        labels = [] if labels is None else labels
         super(EventFilter, self).__init__()
         self._labels = labels
         self._min_frames = min_frames

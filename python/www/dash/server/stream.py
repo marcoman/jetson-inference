@@ -29,7 +29,8 @@ class Stream:
     """
     Represents a pipeline from a video source -> processing -> video output
     """
-    def __init__(self, server, name, source, models=[]):
+    def __init__(self, server, name, source, models=None):
+        models = [] if models is None else models
         # make sure all routes start with '/'
         if not name.startswith('/'):   
             name = '/' + name

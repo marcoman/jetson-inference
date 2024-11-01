@@ -8,18 +8,20 @@ from dash.exceptions import PreventUpdate
 from server import Server
 
 
-def create_stream_dialog(stream={}):
+def create_stream_dialog(stream=None):
     """
     Create the top-level dialog container used for creating/configuring streams.
     It's children will be created dynamically in create_stream_options() below.
     """
+    stream = {} if stream is None else stream
     return dbc.Modal(create_stream_options(stream), id='stream_options_dialog', is_open=False)
     
     
-def create_stream_options(stream={}):
+def create_stream_options(stream=None):
     """
     Create the dialog body used for creating/configuring streams.
     """
+    stream = {} if stream is None else stream
     children = [dbc.ModalHeader(dbc.ModalTitle(stream.get('name', 'Add Stream')))]
     
     form = dbc.Form([

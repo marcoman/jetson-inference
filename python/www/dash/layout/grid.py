@@ -29,10 +29,11 @@ from dash.exceptions import PreventUpdate
 from .card import card_callbacks, CARD_CONTAINER_PREFIX
 
 
-def create_grid(children=[], id='grid'):
+def create_grid(children=None, id='grid'):
     """
     Create a grid for draggable/resizable components
     """
+    children = [] if children is None else children
     grid = dash_draggable.ResponsiveGridLayout(
         children=children,
         draggableHandle=".card-header",  # the cards can only be moved by dragging the card header
