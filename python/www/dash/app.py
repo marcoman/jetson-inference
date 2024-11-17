@@ -82,14 +82,14 @@ def on_refresh(n_intervals, previous_resources):
         server_resources = Server.request('/resources').json()
     except Exception as error:
         traceback.print_exc()
-        print(f"[dash]   error refreshing server resources")
+        print("[dash]   error refreshing server resources")
         raise PreventUpdate
 
     if previous_resources is not None:
         if server_resources == previous_resources:
             raise PreventUpdate   # if the config hasn't changed, skip the update
 
-    print(f"[dash]   received updated resources config from backend server:")
+    print("[dash]   received updated resources config from backend server:")
     pprint.pprint(server_resources, indent=4)
     return server_resources
 

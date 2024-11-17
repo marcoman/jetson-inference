@@ -43,7 +43,7 @@ def create_event_timeline():
     
     return create_card(
         children,
-        title=f"Event Timeline", 
+        title="Event Timeline", 
         width=6,
         height=12,
         id='event_timeline'

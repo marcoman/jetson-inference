@@ -22,10 +22,10 @@ def on_test_card(n1, n2):
     
 
 @card_callback(
-    Input({'type': f'navbar_menu_test_card', 'index': ALL}, 'n_clicks')
+    Input({'type': 'navbar_menu_test_card', 'index': ALL}, 'n_clicks')
 )
 def on_test_card_menu(n):
-    print(f"on_test_card_menu:")
+    print("on_test_card_menu:")
     print(n)
     print(f"on_test_card_menu dash triggered dict type {dash.ctx.triggered_id['type']}")
     print(f"on_test_card_menu triggered_index {dash.ctx.triggered_id['index']}")

@@ -78,7 +78,7 @@ def create_event_table():
     
     return create_card(
         html.Div(children, className='dbc-row-selectable'),
-        title=f"Events", 
+        title="Events", 
         width=6,
         height=12,
         id='events'

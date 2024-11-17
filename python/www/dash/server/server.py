@@ -626,7 +626,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--config", default=None, type=str, help=f"path to JSON file to load global configuration from")
+    parser.add_argument("--config", default=None, type=str, help="path to JSON file to load global configuration from")
     parser.add_argument("--name", default=None, type=str, help="Name of the backend server process to use")
     parser.add_argument("--host", default=None, type=int, help="interface for the server to use (default is all interfaces, 0.0.0.0)")
     parser.add_argument("--port", default=None, type=int, help="port used for webserver (default is 8050)")

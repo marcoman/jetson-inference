@@ -185,7 +185,7 @@ def on_create_action(n_clicks, value):
     if not n_clicks or not value:
         raise PreventUpdate
     
-    action = Server.request('POST', f"/actions", json={'type': value}).json()
+    action = Server.request('POST', "/actions", json={'type': value}).json()
     return create_action_settings(expanded_actions=[action['id']])
     
     
