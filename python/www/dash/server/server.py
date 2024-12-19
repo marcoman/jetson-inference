@@ -279,7 +279,7 @@ class Server:
 
         kwargs['verify'] = False
         
-        return requests.request(*args, **kwargs)
+        return requests.request(*args, **kwargs, timeout=60)
         
     def add_resource(self, group, name, *args, **kwargs):
         """
