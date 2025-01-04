@@ -23,7 +23,6 @@
 import os
 import sys
 import time
-import random
 import pprint
 
 import ssl
@@ -42,6 +41,7 @@ import multiprocessing
 import setproctitle
 
 from jetson_utils import Log
+import secrets
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -176,7 +176,7 @@ class Server:
         If one is not running, start it when autostart=True
         """
         if self.os_process is None:
-            time.sleep(random.uniform(0.5, 5.0))
+            time.sleep(secrets.SystemRandom().uniform(0.5, 5.0))
 
         if autostart and not is_process_running(self.name):
             Log.Verbose(f"[{self.name}] couldn't find existing server process running")
